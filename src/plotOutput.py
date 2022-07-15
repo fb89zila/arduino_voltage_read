@@ -91,15 +91,17 @@ if __name__ == '__main__':
                                      description='Plots measurements from a JSON file.\nEither plots all measurements or a specific one.'
                                      )
     parser.add_argument('-i', '--input', dest='input_path',
-                        help='Path to input file. [default: output-files/output.json]',
+                        metavar='PATH',
+                        help='Path to input file. [default: "output-files/output.json"]',
                         type=Path,
                         default='output-files/output.json')
     parser.add_argument('-o', '--offset', dest='u_offset',
-                        help='Offset of the voltage. [default: 0.0]',
+                        metavar='OFFSET',
+                        help='Offset of the measured voltage. [default: 0.0]',
                         type=float,
                         default=0.0)
     parser.add_argument('-m', '--measurement', dest='m_num',
-                        help='Measurement to be plotted. [default: 0]\n(If <1 all measurements are plotted.)',
+                        help='Measurement to be plotted. [default: 0]\n(M_NUM < 1: all measurements are plotted.)',
                         type=int,
                         default=0)
     args = parser.parse_args()

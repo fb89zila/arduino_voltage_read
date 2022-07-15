@@ -129,11 +129,13 @@ if __name__ == '__main__':
                                      description='Reads the serial and saves the measurements into a JSON file (also plots all measurements)'
                                      )
     parser.add_argument('-o', '--output', dest='output_path',
-                        help='Where to save the output file. [default: output-files/output.json]',
+                        metavar='PATH',
+                        help='Path where the output file should be saved. [default: "output-files/output.json"]',
                         type=Path,
                         default='output-files/output.json')
     parser.add_argument('-p', '--port', dest='serial_port',
-                        help='Port of serial. (eg. WIN: "COMx", Linux: "/dev/ttyACM0")',
+                        metavar='PORT',
+                        help='Port of serial. [default: "DEFAULT_SERIAL_PORT" constant in script]\n(eg. WIN: "COM3", Linux: "/dev/ttyACM0", macOS: "/dev/cu.usbmodem14101")',
                         type=str,
                         default=DEFAULT_SERIAL_PORT)
     args = parser.parse_args()
