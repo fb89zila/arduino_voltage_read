@@ -1,5 +1,8 @@
 #include <Arduino.h>
 
+#define MICROCONTR_OPERATING_VOLTAGE 5 // in V
+#define MICROCONTR_AD_CONVERTER_MAX_VALUE 1023 // 2^AD-converter-resolution - 1
+
 #define MAX_READS 100 // max. 919 - needs testing, use <800 to be safe
 #define ANALOG_READ_DELAY_MICRO_SECONDS 980
 
@@ -33,7 +36,7 @@ void loop()
   Serial.print(",");
   for (int j = 0; j < MAX_READS; j++)
   {
-    Serial.print((float) (output_AC_DC[j] * 5) / 1023.0); // voltage (>0) in V (5V UNO operating voltage, 1024 resolution)
+    Serial.print((float) (output_AC_DC[j] * MICROCONTR_OPERATING_VOLTAGE) / MICROCONTR_AD_CONVERTER_MAX_VALUE);
     if (j != MAX_READS-1)
       Serial.print(",");
   }
