@@ -2,7 +2,8 @@
 All the code was written for an **Arduino UNO rev3 (ATmega328P microcontroller)**.
 
 ## C++ source code file `main.cpp`
-Reads the `A0` pin and writes data to the serial. (PlatformIO was used to compile and upload)
+Reads the `A0` pin and writes data to the serial. (PlatformIO was used to compile and upload)  
+For more information about the Analog-to-Digital converter and other details about the definitions and functions in the code can be found [here](https://github.com/fb89zila/arduino_voltage_read/wiki/EN).
 
 ## Python script `readSerial.py`
 Reads the serial and saves the measurements into a JSON file (also plots all measurements)
