@@ -1,5 +1,5 @@
 # Description
-All the code was written for an **Arduino UNO rev3**.
+All the code was written for an **Arduino UNO rev3 (ATmega328P microcontroller)**.
 
 ## C++ source code file `main.cpp`
 Reads the `A0` pin and writes data to the serial. (PlatformIO was used to compile and upload)
